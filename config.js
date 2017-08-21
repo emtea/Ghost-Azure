@@ -29,7 +29,7 @@ if (!websiteUrlSSL || websiteUrlSSL === '' ||  websiteUrlSSL.length === 0) {
     // using the WEBSITE_HOSTNAME we don't have to append anything and would work in ASE too.
     websiteUrlSSL = 'https://' + process.env.WEBSITE_HOSTNAME;
     console.log(websiteUrlSSL);
-}
+}  
 
 if (mysqlHost) {
   database = {

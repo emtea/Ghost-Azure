@@ -1,38 +1,78 @@
-# [Ghost (0.11.9)](https://github.com/TryGhost/Ghost) [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+<a href="https://github.com/TryGhost/Ghost"><img src="https://cloud.githubusercontent.com/assets/120485/6622822/c4c639fe-c8e7-11e4-9e64-5bec06c8b4c3.png" alt="Ghost" /></a>
+<a href="https://travis-ci.org/TryGhost/Ghost"><img align="right" src="https://travis-ci.org/TryGhost/Ghost.svg?branch=master" alt="Build status" /></a>
 
-Want to install Ghost on Azure? Just click the 'Deploy to Azure' button and you're well on your way to have a Ghost Blog running within a minute or two. Made with :heart: for Ghost by Microsoft.
+![Ghost Screenshot](https://cloud.githubusercontent.com/assets/120485/6626466/6dae46b2-c8ff-11e4-8c7c-8dd63b215f7b.jpg)
 
-**Note: The deployment will most likely fail if you're running in a Free or Shared App Service Plan.  This is due to NPM using more resources than the Azure [sandbox](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox) allows.  To work around this, deploy into a Basic or higher plan and then scale down if needed.  More information in [#30](https://github.com/felixrieseberg/Ghost-Azure/issues/30#issuecomment-217028469) and [npm/npm#7200](https://github.com/npm/npm/issues/7200).** 
+![Ghost is a simple, powerful publishing platform that allows you to share your stories with the world.](https://cloud.githubusercontent.com/assets/120485/6626501/b2bb072c-c8ff-11e4-8e1a-2e78e68fd5c3.png)
 
-**Note: After deployment, Ghost will continue setup - resulting in your brand new website staying blank on the very first load. Please give your website a solid minute of time. It will appear like the site isn't loading, but in reality, it's just creating your database in the background. This only happens the very first time you load your website - simply refresh, you'll see that everything worked well!**
+The project is maintained by a non-profit organisation called the **Ghost Foundation**, along with an amazing group of independent [contributors](https://github.com/TryGhost/Ghost/contributors). We're trying to make publishing software that changes the shape of online journalism.
 
-If you're interested in hosting your blog's images on Azure Blob Storage, check out Tommy Parnell's [ghost-azure-storage module](https://github.com/tparnell8/ghost-azurestorage) that plugs directly into Ghost.
+- [Ghost.org](https://ghost.org)
+- [Latest Release](https://ghost.org/developers/)
+- [Help & Support](http://help.ghost.org/)
+- [Theme Docs](http://themes.ghost.org/v0.11.9/)
+- [API Docs](https://api.ghost.org/v0.11.9/)
+- [Contributing Guide](https://docs.ghost.org/v0.11.9/docs/contributing)
+- [Feature Requests](http://ideas.ghost.org/)
+- [Developer Blog](http://dev.ghost.org)
+- [Self-hoster Docs](http://docs.ghost.org/v0.11.9/)
 
-#### Custom Domain
-Directly after installation, Ghost will assume that your blog runs at `http://sitename.azurewebsites.net`. Should you switch to a custom domain, please inform Ghost about that change - you can do by setting the App Setting `websiteUrl` and restarting your website.
+**NOTE: If you’re stuck, can’t get something working or need some help, please head on over and join our [Slack community](https://ghost.org/slack/) rather than opening an issue.**
 
-## Ghost
-![Ghost Screenshot](https://cloud.githubusercontent.com/assets/120485/4828504/9e832764-5f80-11e4-8ac1-0332bcc67a35.png)
+# Important: Node.js version support
 
-Ghost is a free, open, simple blogging platform that's available to anyone who wants to use it. Lovingly created and maintained by [John O'Nolan](http://twitter.com/JohnONolan) + [Hannah Wolfe](http://twitter.com/ErisDS) + an amazing group of [contributors](https://github.com/TryGhost/Ghost/contributors).
+See [Supported Node.js versions](https://docs.ghost.org/v0.11.9/docs/supported-node-versions)
 
-Visit the project's website at <http://ghost.org> &bull; docs on <http://support.ghost.org>.
 
-## Ghost-Azure
+# Hosting a live Ghost site
 
-Ghost Azure is a project that maintains the minimum configuration required to run ghost in azure Web Apps. This project does not contain alterations to ghost itself.  
+<a href="https://ghost.org/pricing"><img src="https://cloud.githubusercontent.com/assets/120485/18662071/f30da886-7f18-11e6-90f2-42c0ade79fd1.png" alt="Ghost(Pro)" /></a>
 
-## Running Locally
+The easiest way to deploy Ghost is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. You can have a fresh instance up and running in a couple of clicks with a worldwide CDN, backups, security and maintenance all done for you.
 
-To run ghost locally run npm install then simply add websiteUrl, PORT, and NODE_ENV to your environment variables and run npm start. By default NODE_ENV will default to development, but the process that runs in azure runs with the value of production. If you decide to run NODE_ENV as production, you will probably want to turn off forceAdminSSL in config.js otherwise trying to access admin will default to redirecting you to https, and you won't have a valid SSL cert locally. The websiteUrl can be something as simple as `http://localhost` and the PORT variable should be the port you wish the instance to listen on.
+Not only will it save you [many hours per month](https://ghost.org/pricing/#why-ghost-pro), but all revenue goes to the Ghost Foundation, which funds the maintenance and further development of Ghost itself. So you’ll be supporting open source software *and* getting a great service **at the same time**! Talk about win/win. :trophy:
 
-## Upgrading Ghost
-The most comfortable way to update is to synchronize your Ghost installation with this respository. When you hit the deploy button, Azure will be aware of the source - and allow you to synchronize content. When you synchronize a deployment, only files checked into the repository are updated - nothing is deleted. If you didn't change the Ghost source code (but instead just created posts, uploaded pictures, or added themes), simply click the "Sync" button in the Azure Management Portal:
+# Self-Hosters
 
-![Sync Button](./docs/update.png)
+Other options are also available if you prefer playing around with servers by yourself, of course. The freedom of choice is in your hands.
 
-If you copied the files in this repository manually, you can still update with ease. See the [Ghost-Updater-Azure](https://github.com/felixrieseberg/Ghost-Updater-Azure) project for details.
+- [Self-hosting Guide](https://docs.ghost.org/v0.11.9/docs/getting-started-guide)
 
-## Copyright & License
 
-Ghost is Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE).
+# Theme Developers
+
+If you are developing a Ghost theme for your own site or creating themes for others to use we recommend installing Ghost on your own local machine.
+
+1. Install ghost locally...
+    - [Mac](https://docs.ghost.org/v0.11.9/docs/installing-ghost-on-mac)
+    - [Linux](https://docs.ghost.org/v0.11.9/docs/installing-ghost-on-linux)
+    - [Windows](https://docs.ghost.org/v0.11.9/docs/installing-ghost-on-windows)
+2. Start ghost in the `development` environment so it doesn't require a restart after each change to a theme file:
+    - `npm start`
+    
+- [Theme Developer Docs](http://themes.ghost.org/v0.11.9)
+
+
+# Contributors & Advanced Developers
+
+For anyone wishing to contribute to Ghost or to hack/customise core files we recommend following our development setup guides:
+
+- [General Contributor Guide](https://docs.ghost.org/v0.11.9/docs/contributing)
+- [Developer Setup Instructions](https://docs.ghost.org/v0.11.9/docs/working-with-ghost)
+- [Admin Client development guide](https://docs.ghost.org/v0.11.9/docs/working-with-the-admin-client)
+
+
+# Staying Up to Date
+
+When a new version of Ghost comes out, you'll want to look over these [upgrade instructions](https://docs.ghost.org/v0.11.9/docs/how-to-upgrade-ghost) for what to do next.
+
+You can talk to other Ghost users and developers in our [public Slack team](https://ghost.org/slack/) (it's pretty awesome).
+
+New releases are announced on the [dev blog](http://dev.ghost.org/tag/releases/). You can subscribe by email or follow [@TryGhost_Dev](https://twitter.com/tryghost_dev) on Twitter, if you prefer your updates bite-sized and facetious.
+
+:saxophone::turtle:
+
+
+# Copyright & License
+
+Copyright (c) 2013-2017 Ghost Foundation - Released under the [MIT license](LICENSE).
